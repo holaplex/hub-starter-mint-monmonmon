@@ -36,6 +36,7 @@ export default function Home({ session }: HomeProps) {
     );
   }, [collection?.holders, me?.wallet]);
   const owns = pipe(isNil, not)(holder);
+  const holdsHowMany = isNil(holder) ? null : holder.owns;
   const [mint, { loading }] = useMutation<MintData>(MintDrop, {
     awaitRefetchQueries: true,
     refetchQueries: [
@@ -190,7 +191,7 @@ export default function Home({ session }: HomeProps) {
                 <div className='flex flex-row w-full items-center gap-2 justify-between'>
                   <div className='flex flex-col gap-2'>
                     <span className='text-neautraltext font-semibold'>
-                      NFT claimed!
+                      {holdsHowMany>1 ? holdsHowMany + ' NFTs ' : '1 NFT ' } claimed!
                     </span>
                     <Link
                       href='/collectibles'
