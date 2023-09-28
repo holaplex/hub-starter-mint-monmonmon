@@ -114,7 +114,7 @@ export const queryResolvers: QueryResolvers<AppContext> = {
 };
 
 interface MintNftData {
-  mintEdition: MintEditionPayload;
+  mintRandomQueuedToDrop: MintEditionPayload;
 }
 
 interface MintNftVars {
@@ -148,12 +148,13 @@ const mutationResolvers: MutationResolvers<AppContext> = {
       variables: {
         input: {
           drop: process.env.HOLAPLEX_DROP_ID as string,
-          recipient: wallet?.address as string
+          recipient: wallet?.address as string,
+          compressed: true
         }
       }
     });
 
-    return data?.mintEdition.collectionMint as CollectionMint;
+    return data?.mintRandomQueuedToDrop.collectionMint as CollectionMint;
   },
 
   async transferMint(_a, b, { session, dataSources: { db, holaplex } }) {

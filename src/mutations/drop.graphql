@@ -1,5 +1,5 @@
-mutation MintNft($input: MintDropInput!) {
-  mintEdition(input: $input) {
+mutation MintNft($input: MintRandomQueuedInput!) {
+  mintRandomQueuedToDrop(input: $input) {
     collectionMint {
       address
       owner
