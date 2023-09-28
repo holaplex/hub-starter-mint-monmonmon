@@ -127,10 +127,12 @@ export default function Home({ session }: HomeProps) {
           ) : (
             <>
               <span className='text-2xl font-extrabold'>
-                {metadataJson?.name}
+                MONMONMON!
               </span>
               <span className='text-base font-medium text-gray-300 text-center mt-6'>
-                {metadataJson?.description}
+                MONMONMON is the largest generative NFT collection ever made with over 12.8 million 
+                unique NFTs! Each NFT is a card used to play an upcoming game. Mint as many unique 
+                NFTs as you'd like!
               </span>
             </>
           )}
@@ -141,7 +143,7 @@ export default function Home({ session }: HomeProps) {
           ) : (
             <img
               src={metadataJson?.image as string}
-              alt={metadataJson?.name as string}
+              alt='MONMONMON!'
               className='w-full object-cover aspect-square rounded-lg'
             />
           )}
@@ -161,10 +163,12 @@ export default function Home({ session }: HomeProps) {
             ) : (
               <>
                 <span className='text-2xl font-extrabold md:text-xl lg:text-3xl md:font-semibold'>
-                  {metadataJson?.name}
+                MONMONMON!
                 </span>
                 <span className='text-base font-medium text-gray-300 mt-6 md:mt-3 text-center md:text-left'>
-                  {metadataJson?.description}
+                MONMONMON is the largest generative NFT collection ever made with over 12.8 million 
+                unique NFTs! Each NFT is a card used to play an upcoming game. Mint as many unique 
+                NFTs as you'd like!
                 </span>
               </>
             )}
@@ -196,6 +200,13 @@ export default function Home({ session }: HomeProps) {
                     </Link>
                   </div>
                   <Icon.Success />
+                  <button
+                    className='font-bold rounded-full bg-cta text-contrast py-3 px-6 transition hover:opacity-80'
+                    onClick={onMint}
+                    disabled={loading}
+                  >
+                    Claim another
+                  </button>
                 </div>
               ) : (
                 <>
@@ -225,7 +236,7 @@ export default function Home({ session }: HomeProps) {
             ) : (
               <>
                 <span className='text-xs md:text-base text-gray-300'>
-                  Sign up to claim your NFT
+                  Sign up to start claiming cards
                 </span>
                 <Link
                   href='/login'
