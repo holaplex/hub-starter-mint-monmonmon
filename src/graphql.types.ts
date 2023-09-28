@@ -716,6 +716,7 @@ export type MetadataJsonPropertyInput = {
 export type MintDropInput = {
   drop: Scalars['UUID'];
   recipient: Scalars['String'];
+  compressed: true;
 };
 
 /** Represents payload data for the `mint_edition` mutation */

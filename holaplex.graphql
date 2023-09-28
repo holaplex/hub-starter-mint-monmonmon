@@ -840,6 +840,7 @@ Represents input data for `mint_edition` mutation with a UUID and recipient as f
 input MintDropInput {
   drop: UUID!
   recipient: String!
+  compressed: Boolean!
 }
 
 """Represents payload data for the `mint_edition` mutation"""
