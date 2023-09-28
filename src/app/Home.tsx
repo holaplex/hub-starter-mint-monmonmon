@@ -142,9 +142,9 @@ export default function Home({ session }: HomeProps) {
             <div className='w-full aspect-square rounded-lg bg-contrast animate-pulse' />
           ) : (
             <img
-              src={metadataJson?.image as string}
+              src='/img/monmonmon.png'
               alt='MONMONMON!'
-              className='w-full object-cover aspect-square rounded-lg'
+              className='w-full object-cover rounded-lg'
             />
           )}
         </div>
